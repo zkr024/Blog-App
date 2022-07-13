@@ -14,7 +14,9 @@ To get a local copy up and running follow these simple example steps:
 - SSH: https://github.com/zkr024/Blog-App.git
 - Once at the root of the project from the terminal, run the following command
  > bundle install
+ 
  > rails s
+ 
  > access to http://localhost:3000/ in your browser
 
 ## Author
