@@ -4,7 +4,13 @@
   <div><%= post.text %></div>
   <div>Comments: <%= post.comments_counter %></div>
   <div>Likes: <%= post.likes_counter %></div>
-  <div>
-    
-  </div>
+  <ul>Comments
+    <% data = @comments.where(post_id: post.id ) %>
+    <% data.each do |comment| %>
+      <% name = @users.where(id: comment.author_id ) %>
+      <div><%= name.first.name %>: </div>
+      <div><%= comment.text %></div>
+    <% end %>
+  </ul>
+  <br />
 <% end %>
