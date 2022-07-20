@@ -1,1 +1,19 @@
-<h1>User_ID</h1>
+<div>Photo URL:<%= @user.photo  %></div>
+<div>User name: <%= @user.name  %></div>
+<div>Number of posts:<%= @user.id  %></div>
+<br />
+<div>Bio</div>
+<p><%= @user.bio  %></p>
+<div>
+  <% @count=0 %>
+  <% @user.recent_three_posts.each do |post| %>
+    <li>Post #<%=@count+=1%>
+      <div><%= post.title %></div>
+      <div><%= post.text %></div>
+      <div>Comments: <%= post.comments_counter %></div>
+      <div>Likes: <%= post.likes_counter %></div>
+      <br />    
+    </li>
+  <% end %>
+</div>
+<button>See all posts</button>
