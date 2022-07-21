@@ -16,5 +16,10 @@
 </div>
 
 <div class="post_button">
-  <button class="post_button">See all posts</button>
+  <button>
+    <%= link_to "See all posts", user_posts_path(@user) %>
+  </button>
+  <button>
+    <%= link_to "Add a post", new_user_post_path(@user) %>
+  </button>
 </div>

@@ -1,5 +1,9 @@
 <ul>
   <% @users.each do |user| %>
-    <%= render partial: "shared/userCard", locals: { user: user } %>
+    <%= link_to user_path(user) do %>
+      <div>
+        <%= render partial: "shared/userCard", locals: { user: user } %>
+      </div>
+    <% end %>
   <% end %>
 </ul>

@@ -3,9 +3,11 @@
 <%= render partial: "shared/userCard", locals: { user: user } %>
 
 <% @posts.each do |post| %>
-  <div class="post">
-    <%= render partial: "shared/postCard", locals: { post: post } %>
-  </div>
+  <%= link_to user_post_path(user, post) do %>
+    <div class="post">
+      <%= render partial: "shared/postCard", locals: { post: post } %>
+    </div>
+  <% end %>
   
   <div class="comments">
     <% post.recent_five_comments.each do |comment|%>
