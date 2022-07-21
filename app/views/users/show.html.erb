@@ -1,12 +1,4 @@
-<div class="card">
-  <div class="photo">
-    <%= image_tag(@user.photo, width: "150px") %>
-  </div>
-  <div class="user_card">
-    <div class="user_name"><%= @user.name %></div>
-    <div class="user_posts">Number of posts: <%= @user.post_counter %></div>
-  </div>
-</div>
+<%= render partial: "shared/userCard", locals: { user: @user } %>
 
 <div class="bio">
   <div class="bio_title">Bio</div>
@@ -18,13 +10,7 @@
   <% @user.recent_three_posts.each do |post| %>
     <div class="post">
       <div class="post_count">Post #<%=@count+=1%></div>
-      <div class="post_title"><%= post.title %></div>
-      <div class="post_text"><%= post.text %></div>
-      <div class="post_media">
-        <div class="post_comments">Comments: <%= post.comments_counter %></div>
-        <div class="post_likes">Likes: <%= post.likes_counter %></div>
-      </div>
-      <br />    
+      <%= render partial: "shared/postCard", locals: { post: post } %>
     </div>
   <% end %>
 </div>

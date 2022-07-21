@@ -14,10 +14,6 @@
 <div class="comments">
   <% data = @comments.where(post_id: @post.id ) %>
   <% data.each do |comment| %>
-    <% name = @users.where(id: comment.author_id ) %>
-    <div class="comment">
-      <div class="comment_name"><%= name.first.name %>: </div>
-      <div class="comment_text"><%= comment.text %></div>
-    </div>
+    <%= render partial: "shared/postComment", locals: { users: @users, comment: comment} %>
   <% end %>
 </div>
