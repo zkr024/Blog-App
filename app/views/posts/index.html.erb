@@ -1,32 +1,15 @@
 <% identifier = @posts.first %>
 <% user = User.find(id = identifier.author_id) %>
-<div class="card">
-  <div class="photo">
-    <%= image_tag(user.photo, width: "150px") %>
-  </div>
-  <div class="user_card">
-    <div class="user_name"><%= user.name %></div>
-    <div class="user_posts">Number of posts: <%= user.post_counter %></div>
-  </div>
-</div>
+<%= render partial: "shared/userCard", locals: { user: user } %>
 
 <% @posts.each do |post| %>
   <div class="post">
-    <div class="post_title"><%= post.title %></div>
-    <div class="post_text"><%= post.text %></div>
-    <div class="post_media">
-      <div class="post_comments">Comments: <%= post.comments_counter %></div>
-      <div class="post_likes">Likes: <%= post.likes_counter %></div>
-    </div>
+    <%= render partial: "shared/postCard", locals: { post: post } %>
   </div>
   
   <div class="comments">
     <% post.recent_five_comments.each do |comment|%>
-      <% name = @users.where(id: comment.author_id ) %>
-      <div class="comment">
-        <div class="comment_name"><%= name.first.name %>: </div>
-        <div class="comment_text"><%= comment.text %></div>
-      </div>
-  <% end %>
+      <%= render partial: "shared/postComment", locals: { users: @users, comment: comment} %>
+    <% end %>
   </div>
 <% end %>
