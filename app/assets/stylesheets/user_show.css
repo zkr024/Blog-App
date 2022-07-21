@@ -23,6 +23,9 @@
   margin: 20px auto;
   list-style: none;
   border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .post_count {

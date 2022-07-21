@@ -16,4 +16,7 @@
   <% data.each do |comment| %>
     <%= render partial: "shared/postComment", locals: { users: @users, comment: comment} %>
   <% end %>
+  <button class=btn_comment>
+    <%= link_to "Add comment", new_user_post_comment_path(name.first.id, @post.id) %>
+  </button>
 </div>

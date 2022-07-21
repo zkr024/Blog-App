@@ -1,13 +1,17 @@
 <% identifier = @posts.first %>
 <% user = User.find(id = identifier.author_id) %>
-<%= render partial: "shared/userCard", locals: { user: user } %>
+
+<div class="card">
+  <%= render partial: "shared/userCard", locals: { user: user } %>
+</div>
 
 <% @posts.each do |post| %>
-  <%= link_to user_post_path(user, post) do %>
-    <div class="post">
-      <%= render partial: "shared/postCard", locals: { post: post } %>
-    </div>
-  <% end %>
+  <div class="post">
+    <%= render partial: "shared/postCard", locals: { post: post } %>
+    <button class="user_btn">
+      <%= link_to "Access", user_post_path(user, post) %>
+    </button>
+  </div>
   
   <div class="comments">
     <% post.recent_five_comments.each do |comment|%>
