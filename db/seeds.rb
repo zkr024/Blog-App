@@ -1,6 +1,6 @@
 #Users creaton
-first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+first_user = User.create(name: 'Tom', photo: 'profiles/profile1.jpg', bio: 'Teacher from Mexico.')
+second_user = User.create(name: 'Lilly', photo: 'profiles/profile2.jpg', bio: 'Teacher from Poland.')
 
 #Posts Creation
 first_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my first post')

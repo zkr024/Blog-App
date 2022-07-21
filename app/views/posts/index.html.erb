@@ -1,16 +1,32 @@
-<h1>Posts</h1>
+<% identifier = @posts.first %>
+<% user = User.find(id = identifier.author_id) %>
+<div class="card">
+  <div class="photo">
+    <%= image_tag(user.photo, width: "150px") %>
+  </div>
+  <div class="user_card">
+    <div class="user_name"><%= user.name %></div>
+    <div class="user_posts">Number of posts: <%= user.post_counter %></div>
+  </div>
+</div>
+
 <% @posts.each do |post| %>
-  <div><%= post.title %></div>
-  <div><%= post.text %></div>
-  <div>Comments: <%= post.comments_counter %></div>
-  <div>Likes: <%= post.likes_counter %></div>
-  <ul>Comments
-    <% data = @comments.where(post_id: post.id ) %>
-    <% data.each do |comment| %>
+  <div class="post">
+    <div class="post_title"><%= post.title %></div>
+    <div class="post_text"><%= post.text %></div>
+    <div class="post_media">
+      <div class="post_comments">Comments: <%= post.comments_counter %></div>
+      <div class="post_likes">Likes: <%= post.likes_counter %></div>
+    </div>
+  </div>
+  
+  <div class="comments">
+    <% post.recent_five_comments.each do |comment|%>
       <% name = @users.where(id: comment.author_id ) %>
-      <div><%= name.first.name %>: </div>
-      <div><%= comment.text %></div>
-    <% end %>
-  </ul>
-  <br />
+      <div class="comment">
+        <div class="comment_name"><%= name.first.name %>: </div>
+        <div class="comment_text"><%= comment.text %></div>
+      </div>
+  <% end %>
+  </div>
 <% end %>

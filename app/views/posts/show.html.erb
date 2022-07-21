@@ -1,17 +1,23 @@
-<h1>Post_ID</h1>
 <% name = @users.where(id: @post.author_id ) %>
-<div>Post by: <%= name.first.name %></div>
-<div>title:<%= @post.title  %></div>
-<div>text: <%= @post.text  %></div>
-<div>Comments: <%= @post.comments_counter  %></div>
-<div>Likes: <%= @post.likes_counter  %></div>
-<br />
+<div class="post_data">
+  <div class="post_data_top">
+    <div class="post_data_by">Post by: <%= name.first.name %></div>
+    <div class="post_media">
+      <div class="post_comments">Comments: <%= @post.comments_counter  %></div>
+      <div class="post_likes">Likes: <%= @post.likes_counter  %></div>
+    </div>
+  </div>
+  <div class="post_data_title"><%= @post.title  %></div>
+  <div class="post_data_text"><%= @post.text  %></div>
+</div>
 
-<ul>Comments
+<div class="comments">
   <% data = @comments.where(post_id: @post.id ) %>
   <% data.each do |comment| %>
     <% name = @users.where(id: comment.author_id ) %>
-    <div><%= name.first.name %>: </div>
-    <div><%= comment.text %></div>
+    <div class="comment">
+      <div class="comment_name"><%= name.first.name %>: </div>
+      <div class="comment_text"><%= comment.text %></div>
+    </div>
   <% end %>
-</ul>
+</div>
