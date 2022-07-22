@@ -1,8 +1,11 @@
 class LikesController < ApplicationController
   def create
     like = Like.new(likes_params)
-    like.save
-    redirect_back(fallback_location: root_path)
+    if like.save
+      redirect_back(fallback_location: root_path)
+    else
+      puts 'error'
+    end
   end
 
   private

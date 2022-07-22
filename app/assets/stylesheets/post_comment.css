@@ -1,0 +1,32 @@
+.form {
+  width: 60%;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-title,
+.form-text {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 30px;
+}
+
+.title-form {
+  width: 100%;
+  margin: 0;
+}
+
+.text-form {
+  resize: none;
+  height: 250px;
+}
+
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
