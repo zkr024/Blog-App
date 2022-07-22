@@ -13,6 +13,7 @@
     <div class="post">
       <div class="post_count">Post #<%=@count+=1%></div>
       <%= render partial: "shared/postCard", locals: { post: post } %>
+      <%= render partial: "shared/like", locals: {user: @user, post: post}%>
     </div>
   <% end %>
 </div>

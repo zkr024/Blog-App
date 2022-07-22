@@ -11,6 +11,7 @@
     <button class="user_btn">
       <%= link_to "Access", user_post_path(user, post) %>
     </button>
+    <%= render partial: "shared/like", locals: {user: user, post: post}%>  
   </div>
   
   <div class="comments">
