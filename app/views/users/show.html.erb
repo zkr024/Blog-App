@@ -1,4 +1,6 @@
-<%= render partial: "shared/userCard", locals: { user: @user } %>
+<div class="card">
+  <%= render partial: "shared/userCard", locals: { user: @user } %>
+</div>
 
 <div class="bio">
   <div class="bio_title">Bio</div>
@@ -11,10 +13,16 @@
     <div class="post">
       <div class="post_count">Post #<%=@count+=1%></div>
       <%= render partial: "shared/postCard", locals: { post: post } %>
+      <%= render partial: "shared/like", locals: {user: @user, post: post}%>
     </div>
   <% end %>
 </div>
 
 <div class="post_button">
-  <button class="post_button">See all posts</button>
+  <button>
+    <%= link_to "See all posts", user_posts_path(@user) %>
+  </button>
+  <button>
+    <%= link_to "Add a post", new_user_post_path(@user) %>
+  </button>
 </div>

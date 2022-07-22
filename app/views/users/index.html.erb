@@ -1,5 +1,10 @@
 <ul>
   <% @users.each do |user| %>
-    <%= render partial: "shared/userCard", locals: { user: user } %>
+    <li class="card">
+      <%= render partial: "shared/userCard", locals: { user: user } %>
+      <button class="user_btn">
+        <%= link_to "Access", user_path(user) %>
+      </button>
+    </li>
   <% end %>
 </ul>

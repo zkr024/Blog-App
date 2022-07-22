@@ -2,6 +2,7 @@
   display: flex;
   width: 60%;
   margin: 30px auto;
+  position: relative;
 }
 
 .photo {
@@ -25,4 +26,11 @@
   font-size: 20px;
   align-self: end;
   margin: 0 30px 30px 0;
+}
+
+.user_btn {
+  border-radius: 50px;
+  border: 1px solid #000;
+  position: absolute;
+  right: 0;
 }
