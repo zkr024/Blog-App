@@ -9,6 +9,10 @@
   width: 200px;
 }
 
+.img {
+  width: 150px;
+}
+
 .user_card {
   border: 1px solid #000;
   width: 100%;

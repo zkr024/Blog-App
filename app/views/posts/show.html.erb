@@ -1,7 +1,6 @@
-<% name = @users.where(id: @post.author_id ) %>
 <div class="post_data">
   <div class="post_data_top">
-    <div class="post_data_by">Post by: <%= name.first.name %></div>
+    <div class="post_data_by">Post by: <%= @post.user.name %></div>
     <div class="post_media">
       <div class="post_comments">Comments: <%= @post.comments_counter  %></div>
       <div class="post_likes">Likes: <%= @post.likes_counter  %></div>
@@ -12,11 +11,10 @@
 </div>
 
 <div class="comments">
-  <% data = @comments.where(post_id: @post.id ) %>
-  <% data.each do |comment| %>
-    <%= render partial: "shared/postComment", locals: { users: @users, comment: comment} %>
-  <% end %>
+  <% @comment.where(post_id: @post.id).each do |comment| %>
+    <%= render partial: "shared/postComment", locals: { comment: comment} %>
+  <% end %>  
   <button class=btn_comment>
-    <%= link_to "Add comment", new_user_post_comment_path(name.first.id, @post.id) %>
+    <%= link_to "Add comment", new_user_post_comment_path(@post.user.id, @post.id) %>
   </button>
 </div>
