@@ -28,6 +28,7 @@ RSpec.describe 'Users', type: :system do
       expect(page).to have_text('See all posts')
     end
     it 'access button directs to user posts page' do
+      visit user_path(@user.id)
       click_link 'See all posts'
       expect(page).to have_current_path("/users/#{@user.id}/posts")
     end
