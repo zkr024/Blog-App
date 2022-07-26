@@ -1,5 +1,4 @@
-<% identifier = @posts.first %>
-<% user = User.find(id = identifier.author_id) %>
+<% user = @posts.first.user %>
 
 <div class="card">
   <%= render partial: "shared/userCard", locals: { user: user } %>
