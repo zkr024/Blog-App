@@ -21,6 +21,14 @@ To get a local copy up and running follow these simple example steps:
 
 ## Author
 
+👤 **Boaz Aduda**
+
+- GitHub: [@Aduda-Boaz](https://github.com/Aduda-Boaz)
+- Twitter: [@BoazAduda](https://twitter.com/BoazAduda)
+- LinkedIn: [Boaz Aduda](https://www.linkedin.com/in/boaz-aduda/)
+
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Aduda-Boaz&show_icons=true&locale=en" alt="Aduda-Boaz" /></p>
+
 👤 Oscar Bermudez
 
 - GitHub: [@githubhandle](https://github.com/zkr024)
