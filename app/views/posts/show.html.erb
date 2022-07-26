@@ -11,9 +11,9 @@
 </div>
 
 <div class="comments">
-  <% @post.comments.each do |comment| %>
+  <% @comment.where(post_id: @post.id).each do |comment| %>
     <%= render partial: "shared/postComment", locals: { comment: comment} %>
-  <% end %>
+  <% end %>  
   <button class=btn_comment>
     <%= link_to "Add comment", new_user_post_comment_path(@post.user.id, @post.id) %>
   </button>
