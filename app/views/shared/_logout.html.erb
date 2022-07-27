@@ -1,0 +1,5 @@
+<% unless !person_signed_in? %>
+  <button class="sign_out-btn">
+    <%= link_to "Sign Out", destroy_person_session_url, method: :delete %>
+  </button>
+<% end %>

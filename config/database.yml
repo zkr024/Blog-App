@@ -1,6 +1,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: localhost
+  username: postgres
+  password: Hirumi01
 
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
