@@ -1,12 +1,14 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_person!
+
   def new
     @comment = Comment.new
-    @user = current_user
+    @user = current_person
   end
 
   def create
     comment = Comment.new(comment_params)
-    comment.author_id = current_user.id
+    comment.author_id = current_person.id
     comment.post_id = params[:post_id]
 
     if comment.save
