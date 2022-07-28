@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 gem 'bootsnap', require: false
+gem 'cancancan', '~> 3.4'
 gem 'devise'
 gem 'ffi'
 gem 'figaro'
@@ -17,7 +18,6 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data'
-gem 'cancancan', '~> 3.4'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
