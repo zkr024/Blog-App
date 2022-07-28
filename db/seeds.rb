@@ -1,6 +1,6 @@
-first_user = User.create(name: 'Tom', bio: 'Teacher from Mexico.', email: 'tom@test.com', password: 'password', password_confirmation: 'password')
-second_user = User.create(name: 'Lilly', bio: 'Teacher from Poland.', email: 'lili@test.com', password: 'password', password_confirmation: 'password')
-third_user = User.create(name: 'Adriana', bio: 'psychologist from Colombia', email: 'adri@test.com', password: 'password', password_confirmation: 'password')
+first_user = User.create(name: 'Tom', bio: 'Teacher from Mexico.', photo: 'https://images.unsplash.com/photo-1542309667-2a115d1f54c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80', email: 'tom@test.com', password: 'password', password_confirmation: 'password')
+second_user = User.create(name: 'Lilly', bio: 'Teacher from Poland.', photo: 'https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', email: 'lili@test.com', password: 'password', password_confirmation: 'password')
+third_user = User.create(name: 'Adriana', bio: 'psychologist from Colombia', photo: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', email: 'adri@test.com', password: 'password', password_confirmation: 'password')
 
 
 #Posts Creation

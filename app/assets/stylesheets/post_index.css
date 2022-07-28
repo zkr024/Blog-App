@@ -4,11 +4,23 @@
   border: 1px solid #000;
 }
 
+.comment_holder {
+  display: flex;
+  justify-content: space-between;
+}
+
 .comment {
   display: flex;
   margin: 15px;
+  width: 80%
 }
 
 .comment_name {
   width: 5%;
+}
+
+.comment_delete {
+  font-size: 12px;
+  padding: 0;
+  width: 50px;
 }
