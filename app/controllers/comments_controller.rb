@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
-    @user = current_user
   end
 
   def create
@@ -19,7 +18,7 @@ class CommentsController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id]).destroy
 
-    redirect_to user_post_path(params[:user_id])
+    redirect_back(fallback_location: root_path)
   end
 
   private

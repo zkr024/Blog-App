@@ -8,6 +8,8 @@ first_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This i
 second_post = Post.create(author_id: first_user.id, title: 'Alert', text: 'Due date is tomorrow')
 third_post = Post.create(author_id: second_user.id, title: 'Hi', text: 'The work is done')
 forth_post = Post.create(author_id: second_user.id, title: 'Kudos', text: 'All passed')
+fifth_post = Post.create(author_id: third_user.id, title: 'Hi', text: "I'm admin")
+six_post = Post.create(author_id: third_user.id, title: 'here', text: "there")
 
 #Comments creation
 comment = Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Tom!' )
@@ -16,3 +18,7 @@ comment_three = Comment.create(post_id: first_post.id, author_id: second_user.id
 comment_four = Comment.create(post_id: first_post.id, author_id: first_user.id, text: 'that is nice!' )
 comment_five = Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'See ya!' )
 comment_six = Comment.create(post_id: first_post.id, author_id: first_user.id, text: 'Good bye!' )
+
+comment_seven = Comment.create(post_id: fifth_post.id, author_id: first_user.id, text: 'congratz' )
+comment_eight = Comment.create(post_id: fifth_post.id, author_id: second_user.id, text: 'nice' )
+comment_nine = Comment.create(post_id: six_post.id, author_id: second_user.id, text: 'not here or there' )
