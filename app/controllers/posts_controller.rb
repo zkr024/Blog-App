@@ -1,30 +1,33 @@
 class PostsController < ApplicationController
-  before_action :authenticate_person!
-
   def index
     @posts = Post.where(author_id: params[:user_id])
-    @comment = Comment.includes(:user)
+    @comment = Comment.includes(:user, :post)
   end
 
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.includes(:user)
+    @comment = Comment.includes(:user, :post)
   end
 
   def new
     @post = Post.new
-    @user = current_person
   end
 
   def create
     post = Post.new(post_params)
-    post.author_id = current_person.id
+    post.author_id = params[:user_id]
 
     if post.save
-      redirect_to user_posts_path(current_person)
+      redirect_to user_posts_path(params[:user_id])
     else
       redirect_to new_user_post_path
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id]).destroy
+
+    redirect_to user_path(params[:user_id])
   end
 
   private

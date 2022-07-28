@@ -10,6 +10,11 @@
     <button class="user_btn">
       <%= link_to "Access", user_post_path(user, post) %>
     </button>
+    
+    <% if can? :destroy, post %>
+      <%= button_to "Delete", user_post_path(user, post), method: :delete %>
+    <% end %>
+
     <%= render partial: "shared/like", locals: {user: user, post: post}%>  
   </div>
 
