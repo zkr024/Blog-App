@@ -3,5 +3,7 @@
     <div class="comment_name"><%= comment.user.name %>: </div>
     <div class="comment_text"><%= comment.text %></div>
   </div>
-  <%= button_to "Delete", user_post_comment_path(comment.user, comment.post, comment), method: :delete, class: "comment_delete" %>
+  <% if can? :manage, comment %>
+    <%= button_to "Delete", user_post_comment_path(comment.user, comment.post, comment), method: :delete, class: "comment_delete" %>
+  <% end %>
 </div>
