@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  before_action :authenticate_person!
-
   def index
     @posts = Post.where(author_id: params[:user_id])
     @comment = Comment.includes(:user)
@@ -13,15 +11,15 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @user = current_person
+    @user = current_user
   end
 
   def create
     post = Post.new(post_params)
-    post.author_id = current_person.id
+    post.author_id = current_user.id
 
     if post.save
-      redirect_to user_posts_path(current_person)
+      redirect_to user_posts_path(current_user)
     else
       redirect_to new_user_post_path
     end
