@@ -18,6 +18,7 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data'
+gem 'active_model_serializers', '~> 0.10.13'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
