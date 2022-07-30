@@ -3,7 +3,7 @@ class Api::V1::AuthenticationController < ApplicationController
     @user = User.where(email: params[:email]).first
 
     if @user&.valid_password?(params[:password])
-      render json: @user.as_json(only: [:id, :name, :email]), status: :created
+      render json: @user.as_json(only: %i[id name email]), status: :created
     else
       head(:unauthorized)
     end

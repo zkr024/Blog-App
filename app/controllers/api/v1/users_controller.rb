@@ -10,5 +10,4 @@ class Api::V1::UsersController < ApplicationController
 
     render json: @user
   end
-
 end

@@ -1,5 +1,4 @@
 class Api::V1::CommentsController < ApplicationController
-
   def index
     @comments = Comment.where(post_id: params[:post_id])
 
@@ -19,7 +18,7 @@ class Api::V1::CommentsController < ApplicationController
 
   private
 
-    def comment_params
-      params.permit(:text, :author_id, :body)
-    end
+  def comment_params
+    params.permit(:text, :author_id, :body)
+  end
 end

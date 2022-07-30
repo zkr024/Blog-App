@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'active_model_serializers', '~> 0.10.13'
 gem 'bootsnap', require: false
 gem 'cancancan', '~> 3.4'
 gem 'devise'
@@ -18,7 +19,6 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data'
-gem 'active_model_serializers', '~> 0.10.13'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
