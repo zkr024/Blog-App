@@ -25,6 +25,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
 end
 
+gem 'rswag', '~> 2.0'
+
 group :development do
   gem 'web-console'
 end
